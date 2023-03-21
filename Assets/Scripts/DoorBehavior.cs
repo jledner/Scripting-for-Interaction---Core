@@ -54,6 +54,8 @@ public class DoorBehavior : MonoBehaviour
         {
             Vector3 newPos = Vector3.Lerp(startPos, endPos, i);
             transform.position = newPos;
+
+            //makes the coroutine pause until the next frame
             yield return null;
         }
     }
