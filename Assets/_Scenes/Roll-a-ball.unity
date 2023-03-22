@@ -455,11 +455,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: 0}
   speed: 10
-  rotationSpeed: 0
+  rotationSpeed: 5
   rotateX: 0
   rotateY: 0
   rotateZ: 0
   rb: {fileID: 341944300}
+  sphere: {fileID: 983886347}
 --- !u!114 &341944302
 MonoBehaviour:
   m_ObjectHideFlags: 0

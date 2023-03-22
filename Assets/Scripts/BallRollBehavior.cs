@@ -16,10 +16,14 @@ public class BallRollBehavior : MonoBehaviour
 
     // Player's rigidbody
     public Rigidbody rb;
+    public Transform sphere;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
+       
         rb = gameObject.GetComponent<Rigidbody>();
     }
 
@@ -28,9 +32,16 @@ public class BallRollBehavior : MonoBehaviour
     {
         // make world direction into local direction
         Vector3 localDirection = transform.TransformDirection(direction);
+        //transform.rotation = Quaternion.LookRotation(cam.forward);\
 
+        print(direction.z);
+        sphere.Rotate(Vector3.right * direction.z * rotationSpeed);// ;
+
+        
+        //Transform.Rotate();
         //move using physics
         rb.MovePosition(rb.position + (localDirection * speed * Time.deltaTime));
+        
         //rb.MoveRotation(rb.rotation * Quaternion.Euler(rotateX * rotationSpeed * Time.deltaTime, rotateY * rotationSpeed * Time.deltaTime, rotateZ * rotationSpeed * Time.deltaTime));
         //transform.Translate(direction * speed * Time.deltaTime);
     }
